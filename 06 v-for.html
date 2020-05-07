@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li {
+        list-style: none;
+    }
+</style>
+
+<body>
+    <div id="uli">
+        <ul>
+            <li v-for="(value, key) in todos">
+                {{key}} : {{ value.text }}
+            </li>
+        </ul>
+    </div>
+</body>
+<!-- 通过CDN方法引入依赖库 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app4 = new Vue({
+        el: '#uli',
+        data: {
+            todos: [
+                { text: '学习 JavaScript' },
+                { text: '学习 Vue' },
+                { text: '整个牛项目' }
+            ]
+        }
+    })
+</script>
+
+</html>

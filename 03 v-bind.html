@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span {
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div id='app'>
+        <span v-bind:title="message">
+            悬浮查看动态信息
+        </span>
+    </div>
+</body>
+<!-- 通过CDN方法引入依赖库 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    // 创建一个 vue 实例
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            message: '页面加载于 ' + new Date().toLocaleString()
+        }
+    })
+</script>
+
+</html>

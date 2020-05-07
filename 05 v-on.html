@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="mess">
+        <p>{{ message }}</p>
+        <button v-on:click="click">点击反转</button>
+        <img src="" />
+    </div>
+    <button id='btn'>点击弹窗</button>
+</body>
+<!-- 通过CDN方法引入依赖库 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    // 点击出现弹窗
+    document.getElementById("btn").addEventListener("click", function () {
+        alert("Hello Vue");
+    })
+    // 创建一个 vue 实例
+    let vm = new Vue({
+        el: "#mess",
+        data: {
+            message: '哈哈哈，打字辛苦啊！！！'
+        },
+        methods: {
+            click: function () {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+
+</html>
